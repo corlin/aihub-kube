@@ -2,7 +2,5 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/K8sDefinitiveGuide-V5-Sourcecode" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/kraft-mode-kafka-on-kubernetes" vcs="Git" />
   </component>
 </project>
