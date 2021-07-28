@@ -19,9 +19,9 @@ kubectl create -f flink-jobmanager-deployment.yaml
 kubectl create -f flink-taskmanager-deployment.yaml
 
 # 列式 Svc,deployments,pods
-kubectl get svc -n aihub
-kubectl get deployments -n aihub
-kubectl get pods -n aihub
+kubectl -n aihub get svc
+kubectl -n aihub get deployments
+watch kubectl -n aihub  get pods
 
 # 开放外部访问端口
 echo 'kubectl port-forward --address 0.0.0.0 flink-jobmanager 8081:8081'
