@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: kafka
+  labels:
+    app: kafka-app
+  namespace: aihub
+spec:
+  serviceName: kafka-svc
+  replicas: 3
+  selector:
+    matchLabels:
+      app: kafka-app
+  template:
+    metadata:
+      labels:
+        app: kafka-app
+    spec:
+      volumes:
+        - name: kafka-storage
+          persistentVolumeClaim:
+            claimName: pv-claim
+      containers:
+        - name: kafka-container
+          image: corlin/kafka-kraft
+          ports:
+            - containerPort: 9092
+            - containerPort: 9093
+          env:
+            - name: REPLICAS
+              value: '3'
+            - name: SERVICE
+              value: kafka-svc
+            - name: NAMESPACE
+              value: aihub
+            - name: SHARE_DIR
+              value: /opt/aihub
+          volumeMounts:
+            - name: kafka-storage
+              mountPath: /opt/aihub
