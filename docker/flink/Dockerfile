@@ -65,7 +65,7 @@ RUN set -ex; \
 # Configure container
 COPY docker-entrypoint.sh /
 RUN ["chmod", "a+x", "/docker-entrypoint.sh"]
-ENTRYPOINT ["sh", "./docker-entrypoint.sh"]
+ENTRYPOINT ["/docker-entrypoint.sh"]
 #"sh", "./entrypoint.sh"
 EXPOSE 6123 8081
 CMD ["help"]

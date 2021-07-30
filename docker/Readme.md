@@ -33,11 +33,11 @@ docker build -t corlin/docker docker/
 docker build
 
 
-836  docker build -t corlin/flink flink/
-838  docker build -t corlin/flink flink/
-841  docker tag  corlin/flink  corlin/flink:1.13.0-scala_2.11
-842  docker push  corlin/flink
-851  docker push  corlin/flink:1.13.0-scala_2.11
+docker build -t corlin/flink flink/
+docker build -t corlin/flink flink/
+docker tag  corlin/flink  corlin/flink:1.13.0-scala_2.11
+docker push  corlin/flink
+docker push  corlin/flink:1.13.0-scala_2.11
 docker rmi  corlin/flink:1.13.0-scala_2.11
 docker rmi  corlin/flink
 
