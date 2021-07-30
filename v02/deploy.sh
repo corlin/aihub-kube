@@ -4,12 +4,11 @@ kubectl apply -f 01-zookeeper/
 kubectl apply -f 02-kafka/
 kubectl apply -f 03-yahoo-kafka-manager/
 kubectl apply -f 04-kafka-monitor/
-
-
 kubectl apply -f 05-kafka-mirrormaker/
 
+kubectl apply -f 06-flink/
 
-watch -n 1 kubectl -n aihub1 get deployments
+watch -n 1 kubectl -n aihub1 gl et deployments
 watch -n 1 kubectl -n aihub1 get statefulsets
 watch -n 1 kubectl -n aihub1 get services
 watch -n 1 kubectl -n aihub1 get pods
