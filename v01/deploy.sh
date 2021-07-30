@@ -26,6 +26,9 @@ watch kubectl -n aihub  get pods
 # 开放外部访问端口
 echo 'kubectl port-forward --address 0.0.0.0 flink-jobmanager 8081:8081'
 
+kubectl proxy --address 0.0.0.0
+
+
 # 清理资源
 echo 'kubectl scale statefulsets kafka --replicas=3 -n aihub'
 echo 'kubectl scale Deployment flink-jobmanager --replicas=1 -n aihub'

@@ -8,7 +8,7 @@ kubectl apply -f 05-kafka-mirrormaker/
 
 kubectl apply -f 06-flink/
 
-watch -n 1 kubectl -n aihub1 gl et deployments
+watch -n 1 kubectl -n aihub1 get deployments
 watch -n 1 kubectl -n aihub1 get statefulsets
 watch -n 1 kubectl -n aihub1 get services
 watch -n 1 kubectl -n aihub1 get pods

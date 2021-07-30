@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: flink-jobmanager
-  namespace: aihub
+  namespace: aihub1
 spec:
   type: ClusterIP
   ports:
