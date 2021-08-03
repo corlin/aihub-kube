@@ -43,7 +43,7 @@ spec:
         role: mongo
         environment: test
     spec:
-      terminationGracePeriodSeconds: 10
+      terminationGracePeriodSeconds: 5
       containers:
       - name: mongo
         image: mongo
@@ -74,4 +74,4 @@ spec:
       accessModes: [ "ReadWriteOnce" ]
       resources:
         requests:
-          storage: 100Gi
+          storage: 1Gi

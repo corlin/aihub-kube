@@ -131,11 +131,3 @@ jconsole localhost:9999
 ### Kafka manager view
 
 <img src="resources/kafka-manaker-aihub1.png" width="40%">
-
-
-# Changelog
-
-- 2018-09-28, Added monitor configuration using config maps
-- 2018-09-25, Added kafka-monitor recent image for kafka-monitor 1.1.x
-- 2018-09-24, Big refactor, changed per broker config to a single StatefulSet
-  - Changed zookeeper image to use the one provided by dockerhub
