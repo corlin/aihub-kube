@@ -3,7 +3,7 @@ push: push-flink
 .PHONY: push push-flink flink
 
 CONTAINER_NAME = corlin/flink
-TAG = 1.13.0-scala_2.11
+TAG = 1.13.1-scala_2.11-java8
 
 flink:
 docker build -t $(CONTAINER_NAME) .
