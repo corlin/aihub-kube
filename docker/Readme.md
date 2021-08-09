@@ -41,3 +41,5 @@ docker push  corlin/flink:1.13.0-scala_2.11
 docker rmi  corlin/flink:1.13.0-scala_2.11
 docker rmi  corlin/flink
 
+https://archive.apache.org/dist/flink/flink-1.13.0/
+

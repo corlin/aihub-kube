@@ -47,6 +47,7 @@ KAFKA_JMX_OPTS="-Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.au
 kubectl port-forward -n aihub1 --address 0.0.0.0 kafka-manager-7b8fb9f6c6-4c7lg 9000:9000
 
 
+
 kubectl -n aihub1 exec kafka-0 -- tail -f /opt/kafka/logs/state-change.log
 kubectl -n aihub1 exec kafka-0 -- tail -f /opt/kafka/logs/server.log
 kubectl -n aihub1 exec kafka-0 -- tail -f /opt/kafka/logs/controller.log

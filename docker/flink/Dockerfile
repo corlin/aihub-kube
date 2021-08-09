@@ -19,7 +19,7 @@ RUN set -x && \
     rm -rf /var/cache/apk/* && \
     echo Installed Flink ${FLINK_VERSION} to ${FLINK_HOME}
 
-ADD jar/* ${FLINK_HOME}/lib/
+
 
 ADD docker-entrypoint.sh ${FLINK_HOME}/bin/
 # Additional output to console, allows gettings logs with 'docker-compose logs'
