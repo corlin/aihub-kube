@@ -2,7 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: flink-config
-  namespace: aihub2
+  namespace: aihub
   labels:
     app: flink
 data:

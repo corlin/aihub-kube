@@ -2,14 +2,11 @@ docker pull apache/flink:1.13.0-scala_2.11-java8
 
 
 ```sh
-kubectl create -f flink-configuration-configmap.yaml
-kubectl create -f jobmanager-service.yaml
-kubectl create -f jobmanager-session-deployment-non-ha.yaml
-kubectl create -f taskmanager-session-deployment.yaml
+kubectl create -f 1-flink-configuration-configmap.yaml
+kubectl create -f 2-jobmanager-service.yaml
+kubectl create -f 3-jobmanager-session-deployment-non-ha.yaml
+kubectl create -f 4-taskmanager-session-deployment.yaml
 ```
-
-
-
 
 
 
