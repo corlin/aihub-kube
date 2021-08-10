@@ -1,37 +1,4 @@
 apiVersion: v1
-kind: Namespace
-metadata:
-  name: aihub
----
-apiVersion: v1
-kind: PersistentVolume
-metadata:
-  name: kafka-pv-volume
-  labels:
-    type: local
-spec:
-  storageClassName: manual
-  capacity:
-    storage: 2Gi
-  accessModes:
-    - ReadWriteOnce
-  hostPath:
-    path: '/mnt/data'
----
-apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  name: kafka-pv-claim
-  namespace: aihub
-spec:
-  storageClassName: manual
-  accessModes:
-    - ReadWriteOnce
-  resources:
-    requests:
-      storage: 1Gi
----
-apiVersion: v1
 kind: Service
 metadata:
   name: kafka-svc
@@ -67,9 +34,9 @@ spec:
         app: kafka-app
     spec:
       volumes:
-        - name: kafka-storage
+        - name: pv
           persistentVolumeClaim:
-            claimName: kafka-pv-claim
+            claimName: pvc
       containers:
         - name: kafka-container
           image: corlin/kafka-kraft
@@ -86,5 +53,5 @@ spec:
             - name: SHARE_DIR
               value: /mnt/kafka
           volumeMounts:
-            - name: kafka-storage
+            - name: pv
               mountPath: /mnt/kafka
