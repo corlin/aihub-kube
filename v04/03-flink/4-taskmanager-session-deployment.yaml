@@ -18,7 +18,7 @@ spec:
       volumes:
         - name: pv
           persistentVolumeClaim:
-            claimName: pvc
+            claimName: pvctask
         - name: flink-config-volume
           configMap:
             name: flink-config

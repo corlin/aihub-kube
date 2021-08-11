@@ -11,8 +11,8 @@ kubectl get event -n aihub
 
 watch  kubectl get po -n aihub
 
-kubectl port-forward -n aihub --address 0.0.0.0 flink-jobmanager-779d9559c7-tmlvd 8081:8081
-kubectl port-forward -n aihub --address 0.0.0.0 kafka-manager-7b8fb9f6c6-ztz4c 9000:9000
+kubectl port-forward -n aihub --address 0.0.0.0 flink-jobmanager-58cc7c4bb6-4p886 8081:8081
+kubectl port-forward -n aihub --address 0.0.0.0 kafka-0 9092:9092
 
 kubectl -n aihub exec kafka-0 -- tail -f /opt/kafka/logs/state-change.log
 kubectl -n aihub exec kafka-0 -- tail -f /opt/kafka/logs/server.log
@@ -35,9 +35,12 @@ kafka-topics.sh --create --topic gbdtout --partitions 3 --replication-factor 3 -
 kafka-topics.sh --create --topic gbdt --partitions 3 --replication-factor 3 --bootstrap-server localhost:9092
 kafka-topics.sh --describe --topic gbdt --bootstrap-server localhost:9092
 
+kafka-topics.sh --delete --topic gbdt  --bootstrap-server localhost:9092
+kafka-topics.sh --delete --topic gbdtout --bootstrap-server localhost:9092
 
-kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic gbdt
-kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic gbdtout
+
+kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic gbdt --from-beginning --max-messages 10 -group test
+kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic gbdtout --from-beginning --max-messages 10 -group test
 
 /home/flink/flink-1.13.1/bin/flink run -p 1  -m localhost:8081  -c cn.creditease.GbdtStreamTest  /home/flink/alinktest.jar
 
@@ -48,3 +51,5 @@ kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic gbdtout
 
 
 kafka-console-producer.sh --bootstrap-server localhost:9092 --topic gbdt
+
+flink run -d  -t remote -m remote  -c com.creditease.rongdan.flink.xiaoduan.lossrepair.LossRepairStream  /tmp/flink-1.0-SNAPSHOT.jar  --profile prod

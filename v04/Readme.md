@@ -24,3 +24,7 @@ https://time.geekbang.org/column/article/42698
 https://minikube.sigs.k8s.io/docs/commands/node/
 NFS
 https://blog.51cto.com/u_13777088/2471778
+k8s接口
+https://lxkaka.wang/k8s-kafka/
+
+https://blog.csdn.net/carcoon/article/details/114228986

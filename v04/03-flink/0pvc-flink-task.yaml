@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: pvc
+  name: pvctask
   namespace: aihub
   labels:
-    name: pvc
+    name: pvctask
 spec:
   accessModes:
   - ReadWriteMany

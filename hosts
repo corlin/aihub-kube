@@ -26,3 +26,4 @@
 127.0.0.1 www.xmind.net
 127.0.0.1 xmind.net
 192.168.196.130 kubedev
+192.168.196.130 kafka-0.kafka-svc.aihub.svc.cluster.local
