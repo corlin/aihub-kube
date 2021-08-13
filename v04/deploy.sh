@@ -53,3 +53,8 @@ kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic gbdtout --fr
 kafka-console-producer.sh --bootstrap-server localhost:9092 --topic gbdt
 
 flink run -d  -t remote -m remote  -c com.creditease.rongdan.flink.xiaoduan.lossrepair.LossRepairStream  /tmp/flink-1.0-SNAPSHOT.jar  --profile prod
+
+
+kubectl scale statefulsets kafka --replicas=3 -n aihub
+kubectl scale Deployment flink-jobmanager --replicas=1 -n aihub
+kubectl scale Deployment flink-taskmanager --replicas=2 -n aihub

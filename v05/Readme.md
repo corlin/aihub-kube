@@ -1,0 +1,1 @@
+kubectl describe ingress ingress-resource-backend
