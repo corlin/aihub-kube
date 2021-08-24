@@ -8,3 +8,6 @@ ADD jar/*.jar ${FLINK_HOME}/lib/
 # 安装pyalink
 # 升级c++，cpp，gcc
 # 安装xgboost
+# 安装 tensorflow
+# 安装 pytorch
+
